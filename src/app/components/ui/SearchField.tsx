@@ -8,10 +8,10 @@ const SearchField = () => {
           type="text"
           placeholder="Search"
         />
-        <span className="absolute right-2 top-1/2 text-white -translate-y-1/2">
-          {" "}
+        <span className="absolute right-2 top-6 text-white -translate-y-1/2 ">
+          
           <button className="w-5 h-5"><FaSearch /></button>
-          {" "}
+        
         </span>
       </label>
     </>
