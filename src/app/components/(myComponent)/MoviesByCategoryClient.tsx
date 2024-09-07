@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import axios from "axios";
 import { TMovieApiResponse } from "../../types";
+import LoadingSkeleton from "./LoadingSkeleton";
 
 
 const MoviesByCategoryClient = ({ category }: any) => {
@@ -45,7 +46,7 @@ const MoviesByCategoryClient = ({ category }: any) => {
 
 
 
-  if (loading) return <p className="text-white text-3xl text-center">Loading...</p>;
+  if (loading) return <div className="flex justify-center items-center"><LoadingSkeleton/></div>;
 
   if (!data) return <p>No data available</p>;
 

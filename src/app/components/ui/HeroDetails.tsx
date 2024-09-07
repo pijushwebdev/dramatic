@@ -2,9 +2,8 @@ import { TGenre, TMovie } from "@/app/types";
 import { IMAGE_URL } from "@/config";
 import Image from "next/image";
 import { fetchData } from "@/app/apis/api";
-import WatchButton from "./button/WatchButton";
+import { WatchButton, MyListButton } from '../../components';
 import { jersey_10, montserrat } from "@/app/fonts/fonts";
-import MyListButton from "./button/MyListButton";
 import moment from "moment";
 
 const HeroDetails = async ({ movie }: { movie: TMovie }) => {
@@ -22,17 +21,15 @@ const HeroDetails = async ({ movie }: { movie: TMovie }) => {
     adult,
   } = movie;
 
-  let titleResized = "";
-  {
-    title.length > 20
-      ? (titleResized = title.slice(0, 19))
-      : (titleResized = title);
-  }
+  const movieImages = await fetchData(`/movie/${id}/images?include_image_language=en&language=en-US`);
+
+  const logoImg = movieImages?.logos[0]?.file_path;
 
   const releaseYear = moment(release_date, 'YYYY-MM-DD').year();
 
   const res = await fetchData("/genre/movie/list");
   const genresData = res.genres;
+
 
   const genresName: string[] = genresData
     ?.filter((genre: TGenre) => genre_ids?.includes(genre.id))
@@ -43,18 +40,16 @@ const HeroDetails = async ({ movie }: { movie: TMovie }) => {
       <div>
         <div className="relative top-0">
           <Image
-            src={`${IMAGE_URL}${poster_path}`}
+            src={`${IMAGE_URL}${backdrop_path}`}
             alt={title ? title : "movie image"}
             width={1335}
             height={907}
             className="object-fill w-full max-h-[907px] overflow-hidden"
           />
           <div className="top-36 absolute z-10 left-3 max-w-[560px] text-left">
-            <h1
-              className={`${jersey_10.className} text-yellow_tone font-normal md:font-semibold lg:font-bold text-2xl md:text-4xl lg:text-6xl`}
-            >
-              {titleResized}
-            </h1>
+          <div className="mb-5 w-[400px] h-[100px]">
+              <Image src={`${IMAGE_URL}${logoImg}`} width={500} height={100} alt="logo"/>
+            </div>
             <p
               className={`${montserrat.className} text-white font-normal lg:font-semibold`}
             >

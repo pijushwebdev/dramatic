@@ -3,6 +3,7 @@ import MyCarousel from "./MyCarousel";
 import { IMAGE_URL } from "@/config";
 import Image from "next/image";
 import HeroDetails from "./HeroDetails";
+import DetailsPoster from "../(myComponent)/DetailsPoster";
 
 
 const HeroSlider = ({ movies }: { movies: TMovie[] }) => {
@@ -12,7 +13,7 @@ const HeroSlider = ({ movies }: { movies: TMovie[] }) => {
     <div className="max-h-[907px]">
       <MyCarousel >
         {movies.map((movie: TMovie) => (
-          <HeroDetails movie={movie} key={movie.id}/>
+          <DetailsPoster movie={movie} key={movie.id}/>
         ))}
       </MyCarousel>
     </div>
