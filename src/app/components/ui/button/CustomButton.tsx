@@ -1,4 +1,4 @@
-
+'use client'
 import { NavButtonProps } from '@/app/types'; 
 
 

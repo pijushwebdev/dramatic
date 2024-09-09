@@ -7,12 +7,10 @@ const headers= {
     'Content-Type': 'application/json',   
 }
 
-
 export const fetchData = async (url:string) => {
 
   // console.log("API key is:"+ apiKey);
   // console.log(url);
-  
   if(!apiKey){
     throw new Error('API key is not Found');
   }

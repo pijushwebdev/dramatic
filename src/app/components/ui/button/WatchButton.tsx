@@ -1,4 +1,4 @@
-
+'use client'
 
 
 import { IoMdPlay } from 'react-icons/io';
