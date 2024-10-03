@@ -1,7 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
-import { Navbar } from './components'
+import Navbar from './shared/Navbar'
+import Footer from './shared/Footer'
+
 
 
 
@@ -27,7 +29,7 @@ export default function RootLayout({
         
         <Navbar/>
         {children}
-        
+        <Footer/>
         
         </body>
     </html>

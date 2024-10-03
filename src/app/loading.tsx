@@ -1,6 +1,6 @@
 import React from "react";
-import LoadingSkeleton from "./components/(myComponent)/LoadingSkeleton";
-import RadialLoading from "./components/(myComponent)/RadialLoading";
+import RadialLoading from "./components/ui/RadialLoading";
+
 
 const loading = () => {
   return (

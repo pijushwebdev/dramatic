@@ -4,9 +4,8 @@ import { IMAGE_URL } from "@/config";
 import moment from "moment";
 import Image from "next/image";
 import React from "react";
-import { WatchButton, MyListButton } from "../../components";
+import { WatchButton, MyListButton, DownloadButton } from "../../index";
 import { TGenre, TMovie } from "@/app/types";
-import DownloadButton from "../ui/button/DownloadButton";
 
 const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
   // const movie = await fetchData(`/movie/${paramId}`);

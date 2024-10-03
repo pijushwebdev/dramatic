@@ -20,6 +20,8 @@ const config: Config = {
         grey_tone2: '#AFAFAF',
         lilac_tone2: '#5E47A1',
         offWhite: '#E3E3E3',
+        grey_tone3: '#161214',
+        grey_tone4: '#362F33',
       }
     },
   },

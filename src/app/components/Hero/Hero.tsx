@@ -1,6 +1,8 @@
-import { fetchData } from "../apis/api";
-import { montserrat } from "../fonts/fonts";
-import HeroSlider from "./ui/HeroSlider";
+import { fetchData } from "../../apis/api";
+import { montserrat } from "../../fonts/fonts";
+import HeroSlider from "./HeroSlider";
+
+
 
 const Hero = async () => {
 

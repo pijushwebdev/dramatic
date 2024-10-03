@@ -3,7 +3,8 @@
 import { movieCategoryArray } from "@/app/apis/movieCategoriesUrl";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import MoviesByCategoryClient from "./(myComponent)/MoviesByCategoryClient";
+import MoviesByCategoryClient from "../(myComponent)/movieComponents/MoviesByCategoryClient";
+
 
 
 const AllMovieCategories = () => {

@@ -1,12 +1,12 @@
-import React from 'react';
-import AllMovieCategories from '../components/AllMovieCategories';
+import SubHeading from '../components/ui/SubHeading';
+import AllMovieCategories from '../components/Hero/AllMovieCategories';
 
 
 const TvShow = () => {
     
     return (
         <div>
-            <h1 className='text-grey_tone'>TV Show page</h1>
+            <SubHeading heading='TV Show page'/>
             <AllMovieCategories/>
         </div>
     );

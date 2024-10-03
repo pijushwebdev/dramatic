@@ -1,9 +1,8 @@
 import { TMovie } from "@/app/types";
+import DetailsPoster from "../(myComponent)/movieComponents/DetailsPoster";
 import MyCarousel from "./MyCarousel";
-import { IMAGE_URL } from "@/config";
-import Image from "next/image";
-import HeroDetails from "./HeroDetails";
-import DetailsPoster from "../(myComponent)/DetailsPoster";
+
+
 
 
 const HeroSlider = ({ movies }: { movies: TMovie[] }) => {

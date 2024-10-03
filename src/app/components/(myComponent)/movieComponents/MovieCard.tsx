@@ -2,7 +2,7 @@ import { IMAGE_URL } from "@/config";
 import moment from "moment";
 import Image from "next/image";
 import { FaLink, FaRegEye } from "react-icons/fa";
-import BookmarkButton from "../ui/button/BookmarkButton";
+import BookmarkButton from "../../ui/button/BookmarkButton";
 import Link from "next/link";
 
 const MovieCard = ({ movie }: any) => {
@@ -47,7 +47,7 @@ const MovieCard = ({ movie }: any) => {
       <div>
         <h4
           title={title}
-          className="w-40 mt-2 text-base font-bold text-white overflow-hidden text-ellipsis text-nowrap"
+          className="w-40 mt-2 text-base font-bold text-white truncate"
         >
           {title}
         </h4>

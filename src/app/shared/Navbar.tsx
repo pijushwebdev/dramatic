@@ -1,6 +1,5 @@
 "use client";
 
-import { CustomNavLink, CustomButton, SearchField } from ".";
 import { FiGift, FiMenu, FiDownload, FiSettings } from "react-icons/fi";
 import { FaRegBell } from "react-icons/fa";
 import Image from "next/image";
@@ -11,6 +10,7 @@ import React, { useState } from "react";
 import useDeviceWidth from "../hooks/useDeviceWidth";
 import { usePathname } from "next/navigation";
 import { griffy } from "../fonts/fonts";
+import { CustomButton, CustomNavLink, SearchField } from "../components";
 
 
 const Navbar = () => {
@@ -123,7 +123,10 @@ const navButtons = <>
 
       )}
 
-      <div className="sideBgColor top-24 -left-8  absolute lg:top-36 w-20 lg:w-28 rounded-3xl z-50">
+      {/* side bar */}
+      {
+        pathname !== '/movie' && pathname !== '/tv_show' && pathname !== '/new' &&
+        <div className="sideBgColor top-24 -left-8  absolute lg:top-36 w-20 lg:w-28 rounded-3xl z-50">
         <CustomButton
           btnStyle="text-lilac_tone float-right mr-3 lg:mr-[28px] my-2 lg:my-10"
           BtnIcon={<HiOutlineUsers />}
@@ -141,6 +144,8 @@ const navButtons = <>
           BtnIcon={<FiSettings />}
         />
       </div>
+      }
+      {/* side bar end */}
     </div>
   );
 };
