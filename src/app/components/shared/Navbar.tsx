@@ -7,10 +7,10 @@ import { HiOutlineUsers } from "react-icons/hi";
 import { AiOutlineBars } from "react-icons/ai";
 import { IoMdClose } from 'react-icons/io'
 import React, { useState } from "react";
-import useDeviceWidth from "../hooks/useDeviceWidth";
+import useDeviceWidth from "../../hooks/useDeviceWidth";
 import { usePathname } from "next/navigation";
-import { griffy } from "../fonts/fonts";
-import { CustomButton, CustomNavLink, SearchField } from "../components";
+import { griffy } from "../../fonts/fonts";
+import { CustomButton, CustomNavLink, SearchField } from "..";
 
 
 const Navbar = () => {

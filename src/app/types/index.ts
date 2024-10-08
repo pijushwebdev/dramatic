@@ -125,3 +125,8 @@ export type TSimilarMovies = {
     vote_average: number;
     vote_count: number;
 }
+
+export type TCategoryUrl = {
+    title: string;
+    apiUrl: string
+}

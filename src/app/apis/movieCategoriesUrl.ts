@@ -53,7 +53,10 @@ export  const movieCategoryArray = [
     ];
 
 
+    const initialCategories = movieCategoryArray.slice(0, 2);
+    const remainingCategories = movieCategoryArray.slice(2);
 
+export {initialCategories, remainingCategories}
     
 
 

@@ -44,11 +44,12 @@ const HeroDetails = async ({ movie }: { movie: TMovie }) => {
             alt={title ? title : "movie image"}
             width={1335}
             height={907}
+            
             className="object-fill w-full max-h-[907px] overflow-hidden"
           />
           <div className="top-36 absolute z-10 left-3 max-w-[560px] text-left">
           <div className="mb-5 w-[400px] h-[100px]">
-              <Image src={`${IMAGE_URL}${logoImg}`} width={500} height={100} alt="logo"/>
+              <Image src={`${IMAGE_URL}${logoImg}`} width={500} height={100} alt="logo" />
             </div>
             <p
               className={`${montserrat.className} text-white font-normal lg:font-semibold`}

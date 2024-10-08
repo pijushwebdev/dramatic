@@ -1,4 +1,4 @@
-import Navbar from "../shared/Navbar"
+import Navbar from "./shared/Navbar"
 import CustomNavLink from "./ui/button/CustomNavLink" 
 import CustomButton from "./ui/button/CustomButton" 
 import SearchField from "./ui/SearchField"

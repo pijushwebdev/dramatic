@@ -39,7 +39,7 @@ const MovieCard = ({ movie }: any) => {
             width={168}
             height={287}
             alt={title}
-            layout="fixed"
+            
           />
         </div>
       </div>

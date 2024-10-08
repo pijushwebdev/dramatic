@@ -1,11 +1,11 @@
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import LanguageSelector from "../components/ui/LanguageSelector";
+import LanguageSelector from "../ui/LanguageSelector";
 import Link from "next/link";
 
 const Footer = () => {
   return (
     <div className="bg-grey_tone3 pb-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-10 ">
-      <div className="flex lg:justify-center justify-start">
+      <div className="flex lg:justify-center justify-start mb-3 lg:mb-0">
         <LanguageSelector />
       </div>
       {/* 2 */}
@@ -15,7 +15,7 @@ const Footer = () => {
             Navigation
           </h1>
         </div>
-        <div className="flex flex-col space-y-3">
+        <div className="flex flex-col space-y-3 mb-3 lg:mb-0">
           <Link href={`/`} className="text-xs font-normal text-white">
             Home
           </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
             LEGAL
           </h1>
         </div>
-        <div className="flex flex-col space-y-3">
+        <div className="flex flex-col space-y-3 mb-3 lg:mb-0">
           <Link href={`/`} className="text-xs font-normal text-white">
             Privacy Policy
           </Link>
@@ -66,7 +66,7 @@ const Footer = () => {
           </h1>
         </div>
 
-        <div className="flex flex-col space-y-3">
+        <div className="flex flex-col space-y-3 mb-3 lg:mb-0">
 
           <Link href={`/`} className="text-xs font-normal text-white">
             support@ercom.com

@@ -15,7 +15,7 @@ const CastCard = ({ cast }: { cast: TCastMember }) => {
         alt="cast"
         width={100}
         height={80}
-        layout="fixed"
+        
       />
 
       <p className="text-white truncate w-32">{cast?.original_name}</p>

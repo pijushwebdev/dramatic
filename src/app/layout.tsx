@@ -1,8 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
-import Navbar from './shared/Navbar'
-import Footer from './shared/Footer'
+import { Navbar } from './components'
+import Footer from './components/shared/Footer'
+
 
 
 

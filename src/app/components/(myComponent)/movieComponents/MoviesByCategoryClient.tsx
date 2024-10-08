@@ -1,34 +1,35 @@
-"use client";
+'use client'
 
-import MovieCard from "./MovieCard";
-import LoadingSkeleton from "../../ui/LoadingSkeleton";
-import { ClientSideFetching } from "@/app/apis/clientSideApi";
-import SubHeading from "../../ui/SubHeading";
+import RemainCategorySection from "./RemainCategorySection";
+import { IoIosArrowDown } from "react-icons/io";
+import { useState } from "react";
 
-const MoviesByCategoryClient = ({ category }: any) => {
-  const { apiUrl, title } = category;
+const MoviesByCategoryClient = ({ categories }: {categories: {title: string, apiUrl: string}[]}) => {
+  
+  const [isShow, setIsShow] = useState(false);
 
-  const { loading, data } = ClientSideFetching(apiUrl);
-
-  if (loading)
-    return (
-      <div className="flex justify-center items-center">
-        <LoadingSkeleton />
-      </div>
-    );
-
-  if (!data) return <p>No data available</p>;
+  const handleShowMore = () => {
+    setIsShow(!isShow);
+  };
 
   return (
-    <div className="pt-5 card-bg overflow-hidden">
-      {/* <h1 className="text-white font-bold text-lg mb-5">{title}</h1> */}
-      <SubHeading heading={title} />
-
-      <div className="flex gap-8 pb-7 scroll-p-0 scroll-m-0 scroll-smooth scrollbar-hide overflow-x-scroll overflow-y-hidden">
-        {data.results.map((movie: any, index: number) => (
-          <MovieCard key={index} movie={movie} />
-        ))}
-      </div>
+    <div className="text-white">
+      {!isShow && (
+        <button
+          onClick={handleShowMore}
+          className="text-offWhite font-bold text-lg py-1 px-3 bg-lilac_tone2 my-5 rounded-[20px] text-center mx-auto flex justify-center items-center gap-2  transition-all duration-200 hover:text-lilac_tone"
+        >
+          Show More{" "}
+          <span className="font-bold text-xl">
+            <IoIosArrowDown />
+          </span>
+        </button>
+      )}
+      {/* Iterate through each category */}
+      {isShow &&
+      categories.map((category, index) => (
+        <RemainCategorySection key={index}  category={category} />
+      ))}
     </div>
   );
 };

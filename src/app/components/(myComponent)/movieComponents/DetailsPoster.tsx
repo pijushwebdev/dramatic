@@ -63,6 +63,7 @@ const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
             alt={title ? title : "movie image"}
             width={1335}
             height={907}
+            
             className="object-fill w-full max-h-[907px] overflow-hidden"
           />
 
@@ -76,6 +77,7 @@ const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
                 width={500}
                 height={100}
                 alt="logo"
+                
               />
             </div> : <h1
               className={`${jersey_10.className} text-yellow_tone font-normal md:font-semibold lg:font-bold text-2xl md:text-4xl lg:text-6xl`}

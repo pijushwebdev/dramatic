@@ -40,7 +40,7 @@ const CastTrailer = ({
               <div className="relative h-full">
                 <Image
                   className="rounded-md p-0 m-0 h-full object-cover border border-slate-500"
-                  layout="fixed"
+                  
                   src={
                     video?.key
                       ? `https://img.youtube.com/vi/${video?.key}/0.jpg`
