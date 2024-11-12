@@ -31,7 +31,7 @@ const MovieDetails = async ({ params }: { params: { id: string } }) => {
         <CastTrailer video={trailerVideo} casts={casts} />
       </div>
       
-      <div>
+      <div className="mt-10 md:mt-0">
         <SubHeading heading="More Like This"/>
         <SimilarMovies movies={similarMoviesData?.results}/>
 

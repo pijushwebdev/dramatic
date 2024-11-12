@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-grey_tone3 pb-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-10 ">
+    <div className="bg-grey_tone3 pb-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-10 px-10 lg:px-0">
       <div className="flex lg:justify-center justify-start mb-3 lg:mb-0">
         <LanguageSelector />
       </div>

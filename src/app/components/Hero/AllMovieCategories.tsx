@@ -6,7 +6,7 @@ import MoviesByCategory from "../(myComponent)/movieComponents/MoviesByCategory"
 const AllMovieCategories = () => {
 
   return (
-    <div>
+    <div className="pl-4 md:pl-0">
       {initialCategories.map((category, index) => (
         <MoviesByCategory key={index} category={category} />
       ))}

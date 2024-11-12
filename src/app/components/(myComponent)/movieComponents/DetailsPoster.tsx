@@ -8,8 +8,6 @@ import { WatchButton, MyListButton, DownloadButton } from "../../index";
 import { TGenre, TMovie } from "@/app/types";
 
 const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
-  // const movie = await fetchData(`/movie/${paramId}`);
-
   const {
     id,
     vote_average,
@@ -44,15 +42,8 @@ const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
   );
 
   const logoImg = movieImages?.logos[0]?.file_path;
-
   const releaseYear = moment(release_date, "YYYY-MM-DD").year();
-
-  let titleResized = "";
-  {
-    title.length > 25
-      ? (titleResized = title.slice(0, 24))
-      : (titleResized = title);
-  }
+  const titleResized = title.length > 25 ? title.slice(0, 24) : title;
 
   return (
     <>
@@ -60,117 +51,92 @@ const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
         <div className="relative top-0">
           <Image
             src={`${IMAGE_URL}${backdrop_path}`}
-            alt={title ? title : "movie image"}
+            alt={title || "movie image"}
             width={1335}
             height={907}
-            
-            className="object-fill w-full max-h-[907px] overflow-hidden"
+            className="object-fill w-full h-[400px] md:h-[700px] lg:h-[907px] overflow-hidden"
           />
 
-          {/* logoImg */}
-          <div className="lg:top-36 top-20 absolute z-10 left-3 text-left">
-            {logoImg ?
-              <div className="mb-5 lg:w-60 lg:h-10 md:w-30 md:h-14 w-24 h-10 ">
-              <Image
-                className="w-full h-full "
-                src={`${IMAGE_URL}${logoImg}`}
-                width={500}
-                height={100}
-                alt="logo"
-                
-              />
-            </div> : <h1
-              className={`${jersey_10.className} text-yellow_tone font-normal md:font-semibold lg:font-bold text-2xl md:text-4xl lg:text-6xl`}
-            >
-              {titleResized}
-            </h1>
-            }
-            {/* logoImg end */}
+          <div className="absolute top-12 sm:top-16 md:top-20 lg:top-36 left-3 sm:left-6 md:left-10 lg:left-12 z-10 text-left">
+            {logoImg ? (
+              <div className="mb-5 w-24 h-10 sm:w-32 sm:h-12 md:w-40 md:h-14 lg:w-60 lg:h-20">
+                <Image
+                  className="w-full h-full"
+                  src={`${IMAGE_URL}${logoImg}`}
+                  width={500}
+                  height={100}
+                  alt="logo"
+                />
+              </div>
+            ) : (
+              <h1
+                className={`${jersey_10.className} text-yellow_tone font-normal md:font-semibold lg:font-bold text-2xl sm:text-3xl md:text-4xl lg:text-6xl`}
+              >
+                {titleResized}
+              </h1>
+            )}
 
             <p
-              className={`${montserrat.className} text-white font-xs lg:font-semibold w-full leading-tight lg:leading-normal lg:w-2/3 lg:h-18`}
+              className={`${montserrat.className} truncate text-wrap  text-white font-xs text-xs sm:text-sm md:text-base lg:font-semibold w-full sm:w-4/5 md:w-3/4 lg:w-2/3 leading-3 md:leading-4 lg:leading-6`}
             >
-              {overview.length > 260 ? (
-                <span>{overview.slice(0, 260)}...</span>
-              ) : (
-                <span>{overview}</span>
-              )}
+              {overview.length > 260 ? `${overview.slice(0, 260)}...` : overview}
+              {/* {overview} */}
             </p>
-            <p className="text-[#FF2E00] mt-3 uppercase font-semibold">
-              GENRES
-            </p>
-            {genres &&
-              genres.map((genre: TGenre) => (
-                <span
-                  className="text-white font-normal lg:font-semibold"
-                  key={genre.id}
-                >
+
+            <p className="text-[#FF2E00] mt-3 uppercase font-semibold text-sm md:text-base">GENRES</p>
+            <div className="flex flex-wrap gap-1">
+              {genres && genres.map((genre: TGenre) => (
+                <span className="text-white font-normal lg:font-semibold text-xs sm:text-sm md:text-base" key={genre.id}>
                   | {genre.name} |
                 </span>
               ))}
-
-            {genresName &&
-              genresName.map((name, index) => (
-                <span
-                  className="text-white font-normal lg:font-semibold"
-                  key={index}
-                >
+              {genresName && genresName.map((name, index) => (
+                <span className="text-white font-normal lg:font-semibold text-xs sm:text-sm md:text-base" key={index}>
                   | {name} |
                 </span>
               ))}
-
-            <div className="flex gap-3">
-              <WatchButton />
-              <MyListButton />
-              {genres &&
-                <DownloadButton />
-              }
             </div>
 
-            <div className="flex items-center lg:mt-5 mt-2 gap-2">
-              <div className="w-6 h-2 lg:w-12 lg:h-6  flex items-center">
+            <div className="flex gap-3 mt-2 md:mt-4 items-center">
+              <WatchButton />
+              <MyListButton />
+              {genres && <DownloadButton />}
+            </div>
+
+            <div className="flex items-center mt-3 lg:mt-5 gap-2 text-xs sm:text-sm md:text-base">
+              <div className="w-4 h-2 sm:w-6 sm:h-3 lg:w-12 lg:h-6">
                 <Image
-                  className="object-fill w-6 h-2 lg:w-12 lg:h-6 "
+                  className="object-contain w-full h-full"
                   width={54}
                   height={27}
                   src="https://i.ibb.co/0DBNqkP/e4a5b6be082941049058f053ee30d6a3.png"
-                  alt="idb"
+                  alt="IMDb logo"
                 />
               </div>
 
-              <div className="flex items-center gap-2 text-white">
-                <p className="text-yellow_tone font-normal lg:font-bold inline rounded-md px-0 md:px-1">
+              <div className="flex items-center gap-1 sm:gap-2 text-white">
+                <p className="text-yellow_tone font-normal lg:font-bold inline rounded-md px-1">
                   {vote_average.toFixed(1)}
                 </p>
-                <p className="border border-white lg:font-medium font-light inline rounded-md px-0 md:px-1">
-                  U/A
-                </p>
-                <p className="border border-white lg:font-medium font-light inline rounded-md px-0 md:px-1">
-                  4K
-                </p>
-                <p className="lg:font-bold font-normal inline rounded-md px-0 md:px-1">
-                  {releaseYear}
-                </p>
+                <p className="border border-white font-light lg:font-medium inline rounded-md px-1">U/A</p>
+                <p className="border border-white font-light lg:font-medium inline rounded-md px-1">4K</p>
+                <p className="font-normal lg:font-bold inline rounded-md px-1">{releaseYear}</p>
               </div>
             </div>
 
-            <div className="my-3">
-              {spoken_languages && (
-                <h1 className="text-[#FF2E00] uppercase font-semibold">
-                  Subtitles
-                </h1>
-              )}
-
-              <div>
-                {spoken_languages &&
-                  spoken_languages.map((item: any, index: number) => (
-                    <p className="text-white inline font-semibold" key={index}>
-                      {item?.english_name}
+            {spoken_languages && (
+              <div className="my-3">
+                <h1 className="text-[#FF2E00] uppercase font-semibold text-sm md:text-base">Subtitles</h1>
+                <div>
+                  {spoken_languages.map((item: any, index: number) => (
+                    <p className="text-white inline font-semibold text-xs sm:text-sm md:text-base" key={index}>
+                      {item.english_name}
                       {index < spoken_languages.length - 1 && <span>, </span>}
                     </p>
                   ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

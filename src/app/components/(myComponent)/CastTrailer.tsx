@@ -1,10 +1,14 @@
 "use client";
 
 import { TCastMember, TVideo } from "@/app/types";
-import { IMAGE_URL } from "@/config";
 import Image from "next/image";
 import { useState } from "react";
-import { IoIosArrowDown, IoIosArrowUp, IoMdClose, IoMdPlay } from "react-icons/io";
+import {
+  IoIosArrowDown,
+  IoIosArrowUp,
+  IoMdClose,
+  IoMdPlay,
+} from "react-icons/io";
 import CastCard from "./CastCard";
 import SubHeading from "../ui/SubHeading";
 
@@ -31,16 +35,15 @@ const CastTrailer = ({
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-24">
+      <div className="flex flex-col lg:flex-row gap-24 relative">
         {/* video */}
         <div className="">
-          <SubHeading heading="Trailer"/>
+          <SubHeading heading="Trailer" />
           <div className="relative">
             <div className="w-[300px] h-[170px] rounded-md overflow-hidden flex justify-center items-center">
               <div className="relative h-full">
                 <Image
                   className="rounded-md p-0 m-0 h-full object-cover border border-slate-500"
-                  
                   src={
                     video?.key
                       ? `https://img.youtube.com/vi/${video?.key}/0.jpg`
@@ -61,11 +64,11 @@ const CastTrailer = ({
             </div>
 
             {showTrailer && (
-              <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-75 transition-opacity duration-300">
-                <div className="relative w-[90%] max-w-3xl h-1/2 max-h-96 transform scale-95 transition-transform duration-300 ease-out opacity-100 animate-fadeIn">
+              <div className="fixed inset-0 z-40 flex left-1/4 -top-3/4  bg-black bg-opacity-75 transition-all duration-300">
+                <div className="relative w-[90%] max-w-3xl h-full max-h-96 transform scale-95 transition-transform duration-300 ease-out opacity-100 animate-fadeIn">
                   <iframe
                     width="560"
-                    height="315"
+                    height="605"
                     src={`https://www.youtube.com/embed/${video?.key}`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -74,7 +77,7 @@ const CastTrailer = ({
                   ></iframe>
                   <button
                     onClick={handleWatchTrailer}
-                    className="absolute top-2 right-2 text-white text-2xl"
+                    className="absolute z-50 -top-4 -right-3 text-white text-4xl"
                   >
                     <IoMdClose />
                   </button>
@@ -87,26 +90,26 @@ const CastTrailer = ({
 
         {/* cast members */}
 
-        <div className="flex-1">
+        <div className="flex-1 pb-10 ">
           <div>
-            <SubHeading heading="CAST AND CREW INFO"/>
+            <SubHeading heading="CAST AND CREW INFO" />
           </div>
 
           <div>
             <div>
-              <div className="grid grid-cols-5 gap-3">
+              <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-3 mt-5 text-white">
                 {initialMembers.map((cast, index) => (
                   <CastCard key={index} cast={cast} />
                 ))}
               </div>
 
-              {!isShow && (
+              {!isShow && initialMembers.length > 0 && (
                 <button
                   onClick={handleShowMore}
-                  className="text-offWhite mt-10 font-bold text-lg py-1 px-3 bg-lilac_tone2 my-5 rounded-[20px] text-center mx-auto flex justify-center items-center gap-2"
+                  className="text-offWhite absolute -bottom-4 left-1/2 md:left-2/3    -translate-x-1/2 font-bold text-sm md:text-base lg:text-lg py-1 px-2 md:px-3 bg-lilac_tone2 rounded-[20px] text-center  flex justify-center items-center gap-2"
                 >
                   Show More{" "}
-                  <span className="font-bold text-xl">
+                  <span className="flex items-center font-bold text-base md:text-lg lg:text-xl">
                     <IoIosArrowDown />
                   </span>
                 </button>
@@ -125,7 +128,7 @@ const CastTrailer = ({
               {isShow && (
                 <button
                   onClick={handleShowMore}
-                  className="text-offWhite mt-10 font-bold text-lg py-1 px-3 bg-lilac_tone2 my-5 rounded-[20px] text-center mx-auto flex justify-center items-center gap-2"
+                  className="text-offWhite absolute -bottom-4 left-1/2 md:left-2/3    -translate-x-1/2 font-bold text-sm md:text-base lg:text-lg py-1 px-2 md:px-3 bg-lilac_tone2 rounded-[20px] text-center  flex justify-center items-center gap-2"
                 >
                   Hide{" "}
                   <span className="font-bold text-xl">

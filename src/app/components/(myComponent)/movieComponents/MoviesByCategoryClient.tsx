@@ -17,7 +17,7 @@ const MoviesByCategoryClient = ({ categories }: {categories: {title: string, api
       {!isShow && (
         <button
           onClick={handleShowMore}
-          className="text-offWhite font-bold text-lg py-1 px-3 bg-lilac_tone2 my-5 rounded-[20px] text-center mx-auto flex justify-center items-center gap-2  transition-all duration-200 hover:text-lilac_tone"
+          className="text-offWhite font-bold text-sm md:text-base lg:text-lg py-1 px-2 md:px-3 bg-lilac_tone2 my-5 rounded-[20px] text-center mx-auto flex justify-center items-center gap-2  transition-all duration-200 hover:text-lilac_tone"
         >
           Show More{" "}
           <span className="font-bold text-xl">
