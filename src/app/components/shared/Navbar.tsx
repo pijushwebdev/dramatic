@@ -36,11 +36,11 @@ const Navbar = () => {
       />
       <CustomNavLink
         linkStyles={
-          pathname == "/tv_show"
+          pathname == "/tv"
             ? "text-grey_tone font-bold activeLink"
             : "text-grey_tone font-bold"
         }
-        href={"/tv_show"}
+        href={"/tv"}
         title="Tv Show"
         handleOpener={menuOpener}
       />
@@ -161,7 +161,7 @@ const Navbar = () => {
 
         {/* side bar */}
         {pathname !== "/movie" &&
-          pathname !== "/tv_show" &&
+          pathname !== "/tv" &&
           pathname !== "/new_movie" &&
           deviceWidth > 780 && (
             <div className="sideBgColor top-24 -left-8  fixed lg:top-36 w-20 lg:w-28 rounded-3xl z-50">

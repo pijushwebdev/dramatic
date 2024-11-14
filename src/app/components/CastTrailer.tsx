@@ -94,7 +94,7 @@ const CastTrailer = ({
 
         <div className="flex-1 pb-10 ">
           <div>
-            <SubHeading heading="CAST AND CREW INFO" />
+            {initialMembers?.length > 0 && <SubHeading heading="CAST AND CREW INFO" />}
           </div>
 
           <div>
@@ -105,7 +105,7 @@ const CastTrailer = ({
                 ))}
               </div>
 
-              {!isShow && initialMembers.length > 0 && (
+              {!isShow && initialMembers.length > 2 && (
                 <button
                   onClick={handleShowMore}
                   className="text-offWhite absolute -bottom-4 left-1/2 md:left-2/3    -translate-x-1/2 font-bold text-sm md:text-base lg:text-lg py-1 px-2 md:px-3 bg-lilac_tone2 rounded-[20px] text-center  flex justify-center items-center gap-2"

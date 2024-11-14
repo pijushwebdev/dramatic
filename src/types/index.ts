@@ -80,7 +80,28 @@ export type TMovieApiResponse = {
     total_pages: number;
     total_results: number;
 }
-
+export type TTvShowApiResponse = {
+    page: number;
+    results: TTvShow[];
+    total_pages: number;
+    total_results: number;
+}
+export type TTvShow = {
+    adult: boolean;
+    backdrop_path: string;
+    genre_ids: number[];
+    id: number;
+    origin_country: string[];
+    original_language: string;
+    original_name: string;
+    overview: string;
+    popularity: number;
+    poster_path: string;
+    first_air_date: string;
+    name: string;
+    vote_average: number;
+    vote_count: number;
+}
 export type TVideo = {
     iso_639_1: string;
     iso_3166_1: string;
@@ -112,13 +133,13 @@ export type TCastMember = {
 export type TSimilarMovies = {
     adult: boolean;
     backdrop_path: string | null;
-    genre_ids: number[]; 
+    genre_ids: number[];
     id: number;
     original_language: string;
     original_title: string;
     overview: string;
     popularity: number;
-    poster_path: string | null; 
+    poster_path: string | null;
     release_date: string;
     title: string;
     video: boolean;

@@ -30,7 +30,7 @@ const TV = async ({ params }: { params: { id: string } }) => {
     <div className="pl-0 md:pl-24 max-w-[1440px] mx-auto">
       <DetailsTvPoster tv={tv} />
 
-      <div className="relative top-0 md:-top-16 lg:-top-28 card-bg lg:card-bg2 pt-3">
+      <div className="relative top-0 md:-top-16 lg:-top-28 card-bg lg:card-bg2 py-3">
         <CastTrailer video={trailerVideo} casts={casts} />
       </div>
 
