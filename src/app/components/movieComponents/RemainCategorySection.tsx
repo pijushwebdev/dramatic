@@ -1,16 +1,29 @@
 "use client";
 
-import { ClientSideFetching } from "@/app/apis/clientSideApi";
-import LoadingSkeleton from "../../ui/LoadingSkeleton";
-import { TCategoryUrl } from "@/app/types";
-import SubHeading from "../../ui/SubHeading";
-import MovieCard from "./MovieCard";
 
+import { TCategoryUrl, TMovieApiResponse } from "@/types";
+import { MovieCard, LoadingSkeleton, SubHeading } from "..";
+import { fetchData } from "@/app/apis/api";
+import { useEffect, useState } from "react";
 
 const RemainCategorySection = ({ category }: { category: TCategoryUrl }) => {
-  
 
-  const { loading, data } = ClientSideFetching(category?.apiUrl);
+  const [data, setData] = useState<TMovieApiResponse | null>(null);
+  const [loading, setLoading] = useState(true);
+
+ 
+
+  useEffect(()=> {
+    const fetchRemainingData = async () => {
+      const res = await fetchData(category?.apiUrl);
+      setData(res)
+      setLoading(false)
+    }
+
+    fetchRemainingData();
+  }, [category.apiUrl])
+
+  console.log(data);
 
   if (loading) {
     return (

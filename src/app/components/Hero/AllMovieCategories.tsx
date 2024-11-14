@@ -1,6 +1,7 @@
 import { initialCategories, remainingCategories } from "@/app/apis/movieCategoriesUrl";
-import MoviesByCategoryClient from "../(myComponent)/movieComponents/MoviesByCategoryClient";
-import MoviesByCategory from "../(myComponent)/movieComponents/MoviesByCategory";
+import MoviesByCategory from "../movieComponents/MoviesByCategory";
+import MoviesByCategoryClient from "../movieComponents/MoviesByCategoryClient";
+
 
 
 const AllMovieCategories = () => {

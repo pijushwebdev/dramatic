@@ -2,20 +2,25 @@ import { IMAGE_URL } from "@/config";
 import moment from "moment";
 import Image from "next/image";
 import { FaLink, FaRegEye } from "react-icons/fa";
-import BookmarkButton from "../../ui/button/BookmarkButton";
 import Link from "next/link";
+import { BookmarkButton } from "..";
 
-const MovieCard = ({ movie }: any) => {
-  if(!movie) return
+const TvCard = ({ tv }: any) => {
+  if(!tv) return
   const {
     id,
     vote_average,
     title,
+    name,
     release_date,
+    first_air_date,
     poster_path,
-  } = movie;
+  } = tv;
+
+  if(tv?.media_type === 'person') return;
 
   const releaseYear = moment(release_date, "YYYY-MM-DD").year();
+  const firstAirDate = moment(first_air_date, "YYYY-MM-DD").year();
 
 
   return (
@@ -24,13 +29,13 @@ const MovieCard = ({ movie }: any) => {
         <div className="group overflow-hidden relative">
           <Link
             className="absolute rounded-md z-20 transition-all w-full h-full duration-300 opacity-0 ease-in-out bg-black text-lilac_tone2 group-hover:opacity-75 flex justify-center items-center text-3xl "
-            href={`http://localhost:3000/movie/${encodeURIComponent(id)}`}
+            href={`http://localhost:3000/${tv?.media_type ? tv?.media_type : 'tv'}/${encodeURIComponent(id)}`}
           >
             <FaLink />
           </Link>
           <Image
             className="w-full h-[237px] rounded-md duration-300 transition-all group-hover:scale-125 relative z-10"
-            title={title ? title : 'No Name'}
+            title={title ? title : name ? name : 'Title'}
             src={poster_path ?`${IMAGE_URL}${poster_path}` : 'https://i.ibb.co.com/RzDgYSW/10125137-17973836-1.jpg'}
             width={168}
             height={237}
@@ -42,13 +47,13 @@ const MovieCard = ({ movie }: any) => {
 
       <div>
         <h4
-          title={title ? title : 'No Name'}
+          title={title ? title : name ? name : 'Title'}
           className="w-40 mt-2 text-base font-bold text-white truncate"
         >
-          {title}
+          {title ? title : name ? name : 'No Title'}
         </h4>
         <p className="lg:font-bold font-bold text-xs text-grey_tone2 inline rounded-md px-0 md:px-1">
-          {releaseYear}
+          {releaseYear ? releaseYear : firstAirDate}
         </p>
 
         <div className="flex justify-between">
@@ -62,7 +67,7 @@ const MovieCard = ({ movie }: any) => {
               loading="eager"
             />
             <p className="text-yellow_tone font-bold text-xs px-0 md:px-1">
-              {vote_average ? vote_average.toFixed(1) : '00' }
+              {vote_average ? vote_average.toFixed(1) : '0.0' }
             </p>
           </div>
 
@@ -78,4 +83,4 @@ const MovieCard = ({ movie }: any) => {
   );
 };
 
-export default MovieCard;
+export default TvCard;

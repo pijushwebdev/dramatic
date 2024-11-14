@@ -5,7 +5,7 @@ export interface NavLinksProps {
     title: string,
     href: string,
     linkStyles?: string,
-
+    handleOpener?: MouseEventHandler<HTMLAnchorElement>,
 }
 export interface NavButtonProps {
     BtnIcon?: JSX.Element,

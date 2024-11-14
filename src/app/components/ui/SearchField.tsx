@@ -4,6 +4,8 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
+
+
 const SearchField = () => {
   const [query, setQuery] = useState("");
   const router = useRouter();

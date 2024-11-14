@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-import { TMovieApiResponse } from "../types";
+import { TMovieApiResponse } from "../../types";
 import axios from "axios";
 
 export const ClientSideFetching = (apiUrl: string) => {

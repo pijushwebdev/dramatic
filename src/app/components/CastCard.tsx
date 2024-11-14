@@ -1,4 +1,4 @@
-import { TCastMember } from "@/app/types";
+import { TCastMember } from "@/types";
 import { IMAGE_URL } from "@/config";
 import Image from "next/image";
 

@@ -1,5 +1,5 @@
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import LanguageSelector from "../ui/LanguageSelector";
+import {LanguageSelector} from "..";
 import Link from "next/link";
 
 const Footer = () => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { TCastMember, TVideo } from "@/app/types";
+import { TCastMember, TVideo } from "@/types";
 import Image from "next/image";
 import { useState } from "react";
 import {
@@ -9,8 +9,10 @@ import {
   IoMdClose,
   IoMdPlay,
 } from "react-icons/io";
-import CastCard from "./CastCard";
-import SubHeading from "../ui/SubHeading";
+import {CastCard, SubHeading} from ".";
+
+
+
 
 const CastTrailer = ({
   video,
@@ -64,7 +66,7 @@ const CastTrailer = ({
             </div>
 
             {showTrailer && (
-              <div className="fixed inset-0 z-40 flex left-1/4 -top-3/4  bg-black bg-opacity-75 transition-all duration-300">
+              <div className="fixed inset-0 z-40 justify-center flex w-full h-full top-0 left-1/2 -translate-x-1/2  bg-black bg-opacity-75 transition-opacity duration-300">
                 <div className="relative w-[90%] max-w-3xl h-full max-h-96 transform scale-95 transition-transform duration-300 ease-out opacity-100 animate-fadeIn">
                   <iframe
                     width="560"
@@ -77,7 +79,7 @@ const CastTrailer = ({
                   ></iframe>
                   <button
                     onClick={handleWatchTrailer}
-                    className="absolute z-50 -top-4 -right-3 text-white text-4xl"
+                    className="absolute z-50 -top-4 -right-3 text-white text-lg md:text-2xl lg:text-4xl"
                   >
                     <IoMdClose />
                   </button>

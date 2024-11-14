@@ -81,22 +81,24 @@ body{
   max-width: calc(100% - 50px);
 }
 .menuItems{
-  animation: menuItemsAnim 2s ease  forwards;
-  -webkit-animation: menuItemsAnim 2s ease  forwards;
+  animation: menuItemsAnim 1s ease  forwards;
+  -webkit-animation: menuItemsAnim 1s ease  forwards;
 }
 
 @keyframes menuItemsAnim {
   0%{
-    transform: translateY(-130%);
-    -webkit-transform: translateY(-130%);
-    -moz-transform: translateY(-130%);
-    -ms-transform: translateY(-130%);
-    -o-transform: translateY(-130%);
-}100%{
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    opacity: 0;
+}100%,75%{
   transform: translateY(0%);
   -webkit-transform: translateY(0%);
   -moz-transform: translateY(0%);
   -ms-transform: translateY(0%);
   -o-transform: translateY(0%);
+  opacity: 1;
 }
 }

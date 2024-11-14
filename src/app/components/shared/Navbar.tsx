@@ -7,9 +7,9 @@ import { HiOutlineUsers } from "react-icons/hi";
 import { AiOutlineBars } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import React, { useState } from "react";
-import useDeviceWidth from "../../hooks/useDeviceWidth";
+import useDeviceWidth from "../../../hooks/useDeviceWidth";
 import { usePathname } from "next/navigation";
-import { griffy } from "../../fonts/fonts";
+import { griffy } from "../../../fonts/fonts";
 import { CustomButton, CustomNavLink, SearchField } from "..";
 
 const Navbar = () => {
@@ -32,6 +32,7 @@ const Navbar = () => {
         }
         href={"/"}
         title="Home"
+        handleOpener={menuOpener}
       />
       <CustomNavLink
         linkStyles={
@@ -41,6 +42,7 @@ const Navbar = () => {
         }
         href={"/tv_show"}
         title="Tv Show"
+        handleOpener={menuOpener}
       />
       <CustomNavLink
         linkStyles={
@@ -50,6 +52,7 @@ const Navbar = () => {
         }
         href={"/movie"}
         title="Movies"
+        handleOpener={menuOpener}
       />
       <CustomNavLink
         linkStyles={
@@ -59,6 +62,7 @@ const Navbar = () => {
         }
         href={"/new_movie"}
         title="New"
+        handleOpener={menuOpener}
       />
     </>
   );

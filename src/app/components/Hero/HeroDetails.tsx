@@ -1,9 +1,9 @@
-import { TGenre, TMovie } from "@/app/types";
+import { TGenre, TMovie } from "@/types";
 import { IMAGE_URL } from "@/config";
 import Image from "next/image";
 import { fetchData } from "@/app/apis/api";
-import { WatchButton, MyListButton } from '../../components';
-import { jersey_10, montserrat } from "@/app/fonts/fonts";
+import { WatchButton, MyListButton } from '..';
+import { montserrat } from "@/fonts/fonts";
 import moment from "moment";
 
 const HeroDetails = async ({ movie }: { movie: TMovie }) => {

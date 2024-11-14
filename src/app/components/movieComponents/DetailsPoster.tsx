@@ -1,11 +1,11 @@
 import { fetchData } from "@/app/apis/api";
-import { jersey_10, montserrat } from "@/app/fonts/fonts";
+import { jersey_10, montserrat } from "@/fonts/fonts";
 import { IMAGE_URL } from "@/config";
 import moment from "moment";
 import Image from "next/image";
 import React from "react";
-import { WatchButton, MyListButton, DownloadButton } from "../../index";
-import { TGenre, TMovie } from "@/app/types";
+import { WatchButton, MyListButton, DownloadButton } from "..";
+import { TGenre, TMovie } from "@/types";
 
 const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
   const {
@@ -13,15 +13,9 @@ const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
     vote_average,
     title,
     release_date,
-    poster_path,
     overview,
-    original_title,
-    original_language,
     genres,
     backdrop_path,
-    adult,
-    tagline,
-    status,
     spoken_languages,
     genre_ids,
   } = movie;
@@ -42,8 +36,10 @@ const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
   );
 
   const logoImg = movieImages?.logos[0]?.file_path;
-  const releaseYear = moment(release_date, "YYYY-MM-DD").year();
   const titleResized = title.length > 25 ? title.slice(0, 24) : title;
+
+  const releaseYear = moment(release_date, "YYYY-MM-DD").year();
+  
 
   return (
     <>
@@ -51,7 +47,7 @@ const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
         <div className="relative top-0">
           <Image
             src={`${IMAGE_URL}${backdrop_path}`}
-            alt={title || "movie image"}
+            alt={title ? title : name!}
             width={1335}
             height={907}
             className="object-fill w-full h-[400px] md:h-[700px] lg:h-[907px] overflow-hidden"
@@ -87,7 +83,7 @@ const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
             <div className="flex flex-wrap gap-1">
               {genres && genres.map((genre: TGenre) => (
                 <span className="text-white font-normal lg:font-semibold text-xs sm:text-sm md:text-base" key={genre.id}>
-                  | {genre.name} |
+                  | {genre?.name} |
                 </span>
               ))}
               {genresName && genresName.map((name, index) => (

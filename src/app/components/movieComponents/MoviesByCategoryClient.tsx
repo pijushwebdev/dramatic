@@ -1,11 +1,14 @@
-'use client'
+"use client";
 
-import RemainCategorySection from "./RemainCategorySection";
+import { RemainCategorySection } from "..";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 
-const MoviesByCategoryClient = ({ categories }: {categories: {title: string, apiUrl: string}[]}) => {
-  
+const MoviesByCategoryClient = ({
+  categories,
+}: {
+  categories: { title: string; apiUrl: string }[];
+}) => {
   const [isShow, setIsShow] = useState(false);
 
   const handleShowMore = () => {
@@ -27,9 +30,9 @@ const MoviesByCategoryClient = ({ categories }: {categories: {title: string, api
       )}
       {/* Iterate through each category */}
       {isShow &&
-      categories.map((category, index) => (
-        <RemainCategorySection key={index}  category={category} />
-      ))}
+        categories.map((category, index) => (
+          <RemainCategorySection key={index} category={category} />
+        ))}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { TSimilarMovies } from "@/app/types";
+import { TSimilarMovies } from "@/types";
 import { IMAGE_URL } from "@/config";
 import Image from "next/image";
 import Link from "next/link";

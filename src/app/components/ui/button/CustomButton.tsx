@@ -1,5 +1,5 @@
 'use client'
-import { NavButtonProps } from '@/app/types'; 
+import { NavButtonProps } from '@/types'; 
 
 
 const CustomButton = ({BtnIcon, btnStyle, profileImg, handleClick}: NavButtonProps) => {
