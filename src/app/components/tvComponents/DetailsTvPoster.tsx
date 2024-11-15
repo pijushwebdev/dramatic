@@ -45,7 +45,7 @@ const DetailsTvPoster = async ({ tv }: { tv: any }) => {
       <div>
         <div className="relative top-0">
           <Image
-            src={`${IMAGE_URL}${backdrop_path}`}
+            src={backdrop_path?.length > 0 ? `${IMAGE_URL}${backdrop_path}` : "https://i.ibb.co.com/TWNP0xP/Whats-App-Image-2024-11-15-at-11-31-09-267a8f1d.jpg"}
             alt={name || "movie image"}
             width={1335}
             height={907}

@@ -15,7 +15,7 @@ const TvShow = () => {
     const loadTVShows = async () => {
       const data: TTvShowApiResponse = await fetchData(`/discover/tv?page=${currentPage}`);
       setTVShows(data?.results);
-      setTotalPages(data?.total_pages);
+      setTotalPages(500);  // because the TMDB only provide 500 pages (not in the api>> 9277)
     };
 
     loadTVShows();

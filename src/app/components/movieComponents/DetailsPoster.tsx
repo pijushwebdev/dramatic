@@ -46,7 +46,7 @@ const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
       <div>
         <div className="relative top-0">
           <Image
-            src={`${IMAGE_URL}${backdrop_path}`}
+            src={backdrop_path?.length > 0 ? `${IMAGE_URL}${backdrop_path}` : 'https://i.ibb.co.com/1b7W4Sn/Whats-App-Image-2024-11-15-at-11-31-11-c346c366.jpg'}
             alt={title ? title : name!}
             width={1335}
             height={907}
