@@ -42,4 +42,4 @@ Run the development server:
 bash
 Copy code
 npm run dev
-Access the app at http://localhost:3000.
+Access the app at https://dramatic2.netlify.app.
