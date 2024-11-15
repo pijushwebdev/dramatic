@@ -1,4 +1,4 @@
-import { Griffy, Jersey_10, Montserrat } from "next/font/google";
+import { Griffy, Montserrat, Style_Script } from "next/font/google";
 
 
 
@@ -9,7 +9,7 @@ export const griffy = Griffy({
   });
 
 
-export const jersey_10 = Jersey_10({
+export const style_Script = Style_Script({
     subsets: ["latin"],
     display: "swap",
     weight: "400",
@@ -19,3 +19,4 @@ export const montserrat = Montserrat({
   weight: ['400','600', '700'],
   display: 'swap'
 })
+

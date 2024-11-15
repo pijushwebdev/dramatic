@@ -1,6 +1,6 @@
 
 import { fetchData } from "@/app/apis/api";
-import { jersey_10, montserrat } from "@/fonts/fonts";
+import { style_Script, montserrat } from "@/fonts/fonts";
 import { IMAGE_URL } from "@/config";
 import moment from "moment";
 import Image from "next/image";
@@ -65,7 +65,7 @@ const DetailsTvPoster = async ({ tv }: { tv: any }) => {
               </div>
             ) : (
               <h1
-                className={`${jersey_10.className} text-yellow_tone font-normal md:font-semibold lg:font-bold text-2xl sm:text-3xl md:text-4xl lg:text-6xl`}
+                className={`${style_Script.className} text-yellow_tone font-normal md:font-semibold lg:font-bold text-2xl sm:text-3xl md:text-4xl lg:text-6xl pb-1 md:pb-3`}
               >
                 {nameResized}
               </h1>
