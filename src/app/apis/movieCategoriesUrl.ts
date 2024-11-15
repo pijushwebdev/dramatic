@@ -6,7 +6,11 @@ export  const movieCategoryArray = [
             apiUrl: `/discover/movie?sort_by=vote_count.desc&include_adult=false&include_video=false&page=1&with_original_language=hi`
         },
         {
-            title: 'Popular',
+            title: 'Popular TV Shows',
+            apiUrl: `/discover/tv?language=en-US&sort_by=popularity.desc&include_adult=false&page=1`,
+        },
+        {
+            title: 'Popular Movies',
             apiUrl: `/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`,
         },
         {
@@ -17,6 +21,10 @@ export  const movieCategoryArray = [
         {
             title: 'Best by Tom Cruise',
             apiUrl: `/discover/movie?language=en-US&include_adult=false&page=1&with_cast=500&with_people=500&sort_by=vote_count.desc`,
+        },
+        {
+            title: 'Top Rated TV Shows',
+            apiUrl: `/tv/top_rated?language=en-US&page=1`,
         },
         {
             title: 'Action',
