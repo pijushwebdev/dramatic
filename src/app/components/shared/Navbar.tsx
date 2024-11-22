@@ -114,7 +114,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className={`navBgColor absolute top-0 z-50`}>
+    <header className={`navBgColor absolute top-0 z-50`}>
       <div
         id="nav-container"
         className={`max-w-[1440px] relative mx-auto px-5 lg:h-24 grid grid-cols-12 py-2 md:py-4 lg:py-0 place-content-center`}
@@ -188,7 +188,7 @@ const Navbar = () => {
           {navLinks}
         </div>
       )}
-    </div>
+    </header>
   );
 };
 
