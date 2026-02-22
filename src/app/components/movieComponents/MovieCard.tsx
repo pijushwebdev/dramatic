@@ -39,7 +39,7 @@ const MovieCard = ({ movie }: any) => {
             src={poster_path ?`${IMAGE_URL}${poster_path}` : 'https://i.ibb.co.com/RzDgYSW/10125137-17973836-1.jpg'}
             width={168}
             height={237}
-            alt={title}
+            alt={title || 'title'}
             
           />
         </div>

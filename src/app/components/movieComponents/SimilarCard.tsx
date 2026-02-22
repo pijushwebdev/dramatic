@@ -31,7 +31,7 @@ const SimilarCard = ({movie}: {movie: TSimilarMovies}) => {
               }
               width={168}
               height={287}
-              alt={movie?.title}
+              alt={movie?.title || 'title'}
               
             />
           </div>
