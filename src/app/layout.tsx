@@ -17,6 +17,9 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: 'Dramatic | Home',
   description: 'World best Movie Website',
+  icons: {
+    icon: '/dramatic.png'
+  }
 }
 
 export default function RootLayout({

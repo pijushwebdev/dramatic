@@ -17,7 +17,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuOpener = () => {
-    setIsOpen(!isOpen);
+    if (deviceWidth < 780) {
+      setIsOpen(!isOpen);
+    } 
   };
 
   const pathname = usePathname();
