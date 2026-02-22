@@ -1,8 +1,11 @@
 import { TCastMember } from "@/types";
-import { IMAGE_URL } from "@/config";
 import Image from "next/image";
+import { config } from "../apis/config";
 
 const CastCard = ({ cast }: { cast: TCastMember }) => {
+
+  const IMAGE_URL = config.IMAGE_URL;
+  
   return (
     <div className="mb-1">
       <div className="w-[110px] h-[145px]">

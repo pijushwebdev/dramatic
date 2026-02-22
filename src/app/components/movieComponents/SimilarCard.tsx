@@ -1,11 +1,15 @@
 import { TSimilarMovies } from "@/types";
-import { IMAGE_URL } from "@/config";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
+import { config } from "@/app/apis/config";
 
 
 const SimilarCard = ({movie}: {movie: TSimilarMovies}) => {
+
+  const clientUrl = config.client_url;
+  const IMAGE_URL = config.IMAGE_URL;
+
     return (
         <div>
             <div
@@ -15,7 +19,7 @@ const SimilarCard = ({movie}: {movie: TSimilarMovies}) => {
           <div className="group overflow-hidden relative w-64 h-32">
             <Link
               className="absolute rounded-md z-20 transition-all w-full h-full duration-300 opacity-0 ease-in-out bg-black text-lilac_tone2 group-hover:opacity-75 flex justify-center items-center text-3xl "
-              href={`https://dramatic2.netlify.app/movie/${encodeURIComponent(
+              href={`${clientUrl}/movie/${encodeURIComponent(
                 movie?.id
               )}`}
             >

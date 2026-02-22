@@ -1,14 +1,16 @@
-
 import { fetchData } from "@/app/apis/api";
 import { style_Script, montserrat } from "@/fonts/fonts";
-import { IMAGE_URL } from "@/config";
 import moment from "moment";
 import Image from "next/image";
 import React from "react";
 import { WatchButton, MyListButton, DownloadButton } from "..";
 import { TGenre } from "@/types";
+import { config } from "@/app/apis/config";
 
 const DetailsTvPoster = async ({ tv }: { tv: any }) => {
+
+  const IMAGE_URL = config.IMAGE_URL;
+
   const {
     id,
     vote_average,
@@ -20,6 +22,7 @@ const DetailsTvPoster = async ({ tv }: { tv: any }) => {
     spoken_languages,
     genre_ids,
   } = tv;
+
 
   let genresName: string[] = [];
 

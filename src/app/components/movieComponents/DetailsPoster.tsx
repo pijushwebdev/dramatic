@@ -1,13 +1,15 @@
 import { fetchData } from "@/app/apis/api";
 import { style_Script, montserrat } from "@/fonts/fonts";
-import { IMAGE_URL } from "@/config";
 import moment from "moment";
 import Image from "next/image";
 import React from "react";
 import { WatchButton, MyListButton, DownloadButton } from "..";
 import { TGenre, TMovie } from "@/types";
+import { config } from "@/app/apis/config";
 
 const DetailsPoster = async ({ movie }: { movie: TMovie }) => {
+  const IMAGE_URL = config.IMAGE_URL;
+  
   const {
     id,
     vote_average,

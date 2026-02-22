@@ -1,12 +1,15 @@
 import { TGenre, TMovie } from "@/types";
-import { IMAGE_URL } from "@/config";
 import Image from "next/image";
 import { fetchData } from "@/app/apis/api";
 import { WatchButton, MyListButton } from '..';
 import { montserrat } from "@/fonts/fonts";
 import moment from "moment";
+import { config } from "@/app/apis/config";
 
 const HeroDetails = async ({ movie }: { movie: TMovie }) => {
+
+  const IMAGE_URL = config.IMAGE_URL;
+
   const {
     id,
     vote_average,

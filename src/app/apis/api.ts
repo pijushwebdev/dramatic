@@ -1,7 +1,8 @@
 import axios from "axios";
+import { config } from "./config";
 
-const BASE_URL = 'https://api.themoviedb.org/3';
-const apiKey = process.env.DATA_API_KEY || process.env.NEXT_PUBLIC_API_KEY;
+const BASE_URL = config.base_url;
+const apiKey = config.api_key;
 
 const headers= {
     'Content-Type': 'application/json',   
